@@ -7,37 +7,37 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "YOUR COLLECTION NAME";
-const description = "Remember to replace this description";
+const namePrefix = "EVACORE.xyz"; // collection name.
+const description = "Evacore serves as your Identity in Nwalumara";// description.
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
-
+// layers order
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 10,// numcer of nft you want.
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "BG" }, // background. 
+      { name: "body" }, // layer 6
+      { name: "mask" }, // layer 5
+      { name: "eyes" }, // layer 4
+      { name: "hair" }, // layer 3
+      { name: "clothes" }, //layer 2
+      { name: "fire or power" }, // layer 1
     ],
   },
 ];
-
-const shuffleLayerConfigurations = true;
+// this controls the shuffling of the nft
+const shuffleLayerConfigurations = false;
 
 const debugLogs = false;
-
+// nft pixel format or size of image.
 const format = {
-  width: 512,
-  height: 512,
+  width: 800,
+  height: 800,
   smoothing: false,
 };
-
+//website link.
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://evacorenft.xyz", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -48,11 +48,11 @@ const LIMIT = 2; // Your API key rate limit
 const CHAIN = 'goerli'; // only goerli, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'CRYPTOPUNKS';
-const CONTRACT_SYMBOL = 'CP';
+const CONTRACT_NAME = 'evacore';// CONTRACT NAME
+const CONTRACT_SYMBOL = 'EVC';// NFT SYMBOL
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
-const TREASURY_ADDRESS = 'YOUR WALLET ADDRESS HERE';
+const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';// METAMASK WALLET ADDRESS
+const TREASURY_ADDRESS = 'YOUR WALLET ADDRESS HERE';// METAMASK WALLET
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
 const MINT_PRICE = 0.01; // Minting price per NFT. Goerli = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
